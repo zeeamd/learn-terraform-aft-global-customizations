@@ -53,3 +53,19 @@ region = $(aws ec2 describe-availability-zones --query 'AvailabilityZones[0].[Re
 cidr = $(python ./python/source/get_cidr_range.py)
 aws ssm put-parameter --name /$account/$region/vpc/cidr --value $cidr
 ```
+
+## Customizations
+- Post adding any new code invoke aft-invoke-customizations steo function in AFT
+- To apply to all accounts use the following input filter when invoking the above step function
+
+{
+  "include": [
+    {
+      "type": "all"
+    }
+  ]
+}
+
+- Update the sample filter input as per the accounts to apply the global change if account has already been created
+- Any new account provisioned post this will have the change automatically applied to it
+- In this case hippa-conformance-pack pack was applied from https://registry.terraform.io/modules/cloudposse/config/aws/latest/submodules/conformance-pack
