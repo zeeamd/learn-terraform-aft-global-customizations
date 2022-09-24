@@ -68,4 +68,5 @@ aws ssm put-parameter --name /$account/$region/vpc/cidr --value $cidr
 
 - Update the sample filter input as per the accounts to apply the global change if account has already been created
 - Any new account provisioned post this will have the change automatically applied to it
+- This step function will invoke the same account specific customization code pipeline to apply the change
 - In this case hippa-conformance-pack pack was applied from https://registry.terraform.io/modules/cloudposse/config/aws/latest/submodules/conformance-pack
