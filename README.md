@@ -55,7 +55,7 @@ aws ssm put-parameter --name /$account/$region/vpc/cidr --value $cidr
 ```
 
 ## Customizations
-- Post adding any new code invoke aft-invoke-customizations steo function in AFT
+- Post adding any new code invoke aft-invoke-customizations step function in AFT
 - To apply to all accounts use the following input filter when invoking the above step function
 
 {
